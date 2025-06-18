@@ -1,0 +1,19 @@
+.user{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgb(155, 155, 155);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items:center ;
+    font-size: 18px;
+    justify-content: space-between;
+}
+
+.user a {
+    font-weight: 500;
+   color: #2e2e2e;
+    text-decoration: none;
+}
