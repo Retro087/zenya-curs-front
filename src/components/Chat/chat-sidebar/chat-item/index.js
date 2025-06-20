@@ -11,7 +11,7 @@ const ChatItem = ({ item, active }) => {
     <div
       style={{ backgroundColor: active == item.chatId ? "#eeeeee" : "" }}
       className={s.wrap}
-      onClick={() => navigate(`/chats/${item.chatId}/${item.recieverId}`)}
+      onClick={() => navigate(`/chats/${item.chatId}`)}
     >
       <div className={s.icon}>
         <img style={{ width: 25, height: 25 }} src={item.photo || icon} />
@@ -19,17 +19,10 @@ const ChatItem = ({ item, active }) => {
       <div style={{ flex: 1 }}>
         <div className={s.date_isRead}>
           <span className={s.name}>{item.username}</span>
-          {item.isRead ? <CheckedMessage isRead={item.isRead} /> : ""}
-          {/*<span className={s.date}>{DateFormat(item.lastMessageDate)}</span>*/}
         </div>
 
         <span className={s.last}>{item.lastMessage}</span>
       </div>
-      {item.unreadCount ? (
-        <span className={s.unread}>{item.unreadCount}</span>
-      ) : (
-        ""
-      )}
     </div>
   );
 };

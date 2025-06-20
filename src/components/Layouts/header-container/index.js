@@ -22,7 +22,7 @@ const HeaderContainer = (props) => {
 
   const callbacks = {
     toAuth: useCallback(() => navigate("/auth")),
-    toProfile: useCallback(() => navigate("/profile")),
+    toProfile: useCallback(() => navigate(`/profile/${select.myId}`)),
 
     logout: useCallback(() => dispatch(logout()), []),
   };

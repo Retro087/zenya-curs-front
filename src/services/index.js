@@ -29,7 +29,7 @@ instance.interceptors.request.use(
 
 services.usersAPI = {
   getUsers() {
-    return instance.get(`profile/users`).then((response) => response.data);
+    return instance.get(`profile/users/all`).then((response) => response.data);
   },
 };
 

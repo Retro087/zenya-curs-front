@@ -8,6 +8,7 @@ import ContainerLayout from "../../layouts/container-layout";
 import { getProfile, updateProfile } from "../../store/profileSlice";
 import BlockTitle from "../common/block-title";
 import Button from "../common/Button";
+import services from "../../services";
 
 const ProfileContainer = () => {
   const navigate = useNavigate();
@@ -34,10 +35,18 @@ const ProfileContainer = () => {
     return <div>'не найдено'</div>;
   }
 
+  const createChat = async (user) => {
+    const res = await services.chatsAPI.createChat(select.myId, user);
+
+    const chatId = res.chat.id;
+
+    navigate(`/chats/${chatId}`);
+  };
+
   return (
     <div>
       <ContainerLayout alignItems="start" width={1140}>
-        {params.id === select.myId ? (
+        {params.id == select.myId ? (
           <ProfilePersonal
             update={callbacks.update}
             title={"Персональные"}
@@ -54,7 +63,7 @@ const ProfileContainer = () => {
                 padding: 10,
               }}
             >
-              Город: {select.profile.personal.city}
+              Город: {select.profile.personal.city || "-"}
             </div>
             <div
               style={{
@@ -63,7 +72,7 @@ const ProfileContainer = () => {
                 padding: 10,
               }}
             >
-              Почта: {select.profile.personal.email}
+              Почта: {select.profile.personal.email || "-"}
             </div>
             <div
               style={{
@@ -73,9 +82,12 @@ const ProfileContainer = () => {
                 marginBottom: 25,
               }}
             >
-              Телефон: {select.profile.personal.phone}
+              Телефон: {select.profile.personal.phone || "-"}
             </div>
-            <Button value={"Написать"} />
+            <Button
+              onClick={() => createChat(select.profile.id)}
+              value={"Написать"}
+            />
           </div>
         )}
       </ContainerLayout>

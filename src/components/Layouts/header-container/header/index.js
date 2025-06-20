@@ -4,6 +4,7 @@ import s from "./style.module.css";
 import ContainerLayout from "../../../../layouts/container-layout";
 import loopa from "../../../../assets/search.png";
 import icon from "../../../../assets/icon.png";
+import group from "../../../../assets/group.png";
 
 import { Link } from "react-router";
 
@@ -18,7 +19,9 @@ const Header = (props) => {
         <Link to={"/"}>
           <div className={s.logo}>StarLine</div>
         </Link>
-
+        <Link to={"/users"}>
+          <img className={s.group} src={group} />
+        </Link>
         <div className={s.profile}>
           <div onClick={() => setHide(!hide)} className={s.profile_block}>
             <span className={s.login}>{props.profile?.username}</span>

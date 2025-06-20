@@ -50,7 +50,7 @@ function App() {
         />
 
         <Route
-          path="/chats/:id?/:reciever?"
+          path="/chats/:id?"
           element={
             <WithAuth>
               <Chat />
