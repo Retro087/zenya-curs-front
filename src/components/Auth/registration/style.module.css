@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  background-color: #ffffff;
 }
 
 .container {
@@ -45,7 +45,7 @@
 .label {
   display: block;
   margin-bottom: 5px;
-  color: #fff;
+  color: #000000;
 }
 
 .input {
@@ -80,11 +80,11 @@
 .reg {
   cursor: pointer;
   text-align: start;
-  color: rgba(182, 182, 182, 1);
+  color: rgb(107, 107, 107);
   margin-top: 20px;
 }
 .reg span {
-  color: rgba(255, 255, 255, 1);
+  color: rgb(63, 63, 63);
   text-decoration: underline;
 }
 .left_card {
@@ -133,7 +133,7 @@
   margin-bottom: 50px;
 }
 .title {
-  color: #fff;
+  color: #000000;
   font-weight: 510;
   font-size: 40px;
   line-height: 100%;

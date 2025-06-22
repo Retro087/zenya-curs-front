@@ -58,64 +58,37 @@ const Registration = (props) => {
       className={s.wrap}
     >
       <div className={s.container}>
-        <div className={s.left}>
-          <div className={s.left_card}>
-            <div className={s.left_card_text}>
-              <h1>Добро пожаловать в StarLine</h1>
-              <p>Создайте свой продукт </p>
-            </div>
-            <img src={card} />
-          </div>
-        </div>
         <div className={s.rigth}>
           <div className={s.logo}>StarLine</div>
           <h1 className={s.title}>Создай свой аккаунт</h1>
-          {getInputByStep()}
-
+          <AuthInput
+            value={data.login}
+            ph="email@gmail.com"
+            onChange={(e) => setData({ ...data, login: e.target.value })}
+            label={"Электронная почта"}
+          />
+          <AuthInput
+            value={data.name}
+            ph="Name"
+            onChange={(e) => setData({ ...data, name: e.target.value })}
+            label={"Имя"}
+          />
+          <AuthInput
+            value={data.password}
+            ph="password"
+            onChange={(e) => setData({ ...data, password: e.target.value })}
+            label={"Пароль"}
+          />
           <div className={s.btn_block}>
             <button
               style={{ marginBottom: 50 }}
-              type={"button"}
-              onClick={
-                step !== 3 ? () => setStep(step + 1) : () => props.reg(data)
-              }
+              type={"submit"}
               className={s.btn}
             >
-              {step === 3 ? "Зарегистрироваться" : "Далее"}
+              {"Зарегистрироваться"}
             </button>
           </div>
-          <div className={s.spacer}>
-            <span>Или</span>
-          </div>
-          <div className={s.btn_block}>
-            <button
-              style={{
-                marginBottom: 10,
-                gap: 5,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              type="button"
-              className={s.btn}
-            >
-              <img src={google} />
-              Google
-            </button>
-            <button
-              type="button"
-              className={s.btn}
-              style={{
-                gap: 5,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <img src={apple} />
-              Apple
-            </button>
-          </div>
+
           <div className={s.reg} onClick={() => props.toAuth()}>
             Уже есть аккаунт? <span>Войдите в него</span>
           </div>

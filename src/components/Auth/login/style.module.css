@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  background-color: #fff;
 }
 
 .container {
@@ -79,11 +79,11 @@
 .reg {
   cursor: pointer;
   text-align: start;
-  color: rgba(182, 182, 182, 1);
+  color: rgb(78, 78, 78);
   margin-top: 20px;
 }
 .reg span {
-  color: rgba(255, 255, 255, 1);
+  color: rgb(148, 148, 148);
   text-decoration: underline;
 }
 .left_card {
@@ -132,7 +132,7 @@
   margin-bottom: 50px;
 }
 .title {
-  color: #fff;
+  color: #000000;
   font-weight: 510;
   font-size: 40px;
   line-height: 100%;
