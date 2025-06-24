@@ -73,7 +73,7 @@ export const authSlice = createSlice({
       state.load = true;
     });
     builder.addCase(fetchReg.rejected, (state, err) => {
-      state.err = err;
+      state.err = err.error.message;
       state.load = false;
     });
     builder.addCase(fetchAuthMe.fulfilled, (state, action) => {
